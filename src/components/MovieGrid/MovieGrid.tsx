@@ -1,18 +1,11 @@
 import css from "./MovieGrid.module.css";
 import type Movie from "../../types/movie";
-import { useState } from "react";
-import MovieModal from "../MovieModal/MovieModal";
 
 interface MovieGridProps{
     onSelect: (movie: Movie) => void;
     movies: Movie[],
 }
 export default function MovieGrid( {onSelect  , movies } : MovieGridProps) {
- const [isModalOpen, setIsModalOpen] = useState(false);
-
- const openModal = () => setIsModalOpen(true);
- 
- const closeModal = () => setIsModalOpen(false);
  
   return (
     <div>
@@ -27,7 +20,6 @@ export default function MovieGrid( {onSelect  , movies } : MovieGridProps) {
             loading="lazy"
           />
           <h2 className={css.title}>{movie.title}</h2>
-           {/* {isModalOpen && <MovieModal onClose={closeModal} movie={movie}/>} */}
         </div>
       </li>
       ))}
