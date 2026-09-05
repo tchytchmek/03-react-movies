@@ -1,5 +1,5 @@
 import css from "./MovieGrid.module.css";
-import type Movie from "../../types/movie";
+import type {Movie} from "../../types/movie";
 
 interface MovieGridProps{
     onSelect: (movie: Movie) => void;
@@ -11,7 +11,7 @@ export default function MovieGrid( {onSelect  , movies } : MovieGridProps) {
     <div>
     <ul className={css.grid}>
       {movies.map((movie) => (
-      <li onClick={() => onSelect(movie)}>
+      <li key={movie.id} onClick={() => onSelect(movie)}>
         <div className={css.card}>
           <img
             className={css.image}
