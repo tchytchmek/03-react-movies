@@ -19,3 +19,4 @@ export default async function fetchMovies(query : string){
 })
 return data.results;
 }
+//HAHAHA no one cares bitch
